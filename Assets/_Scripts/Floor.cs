@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class Floor : MonoBehaviour {
@@ -9,6 +10,7 @@ public class Floor : MonoBehaviour {
 	public ParticleSystem particleSystem;
 	private int destroyed;
 	public string mainMenuScene;
+	public List<Image> hearts;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,7 @@ public class Floor : MonoBehaviour {
 		Destroy (col.gameObject);
 		Destroy (fx.gameObject, 3);
 		destroyed += 1;
+		hearts [destroyed-1].color = Color.black;
 		if (destroyed >= 10) {
 			SceneManager.LoadScene(mainMenuScene);
 		}
