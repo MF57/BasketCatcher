@@ -27,7 +27,7 @@ public class Floor : MonoBehaviour {
 		Destroy (col.gameObject);
 		Destroy (fx.gameObject, 3);
 		destroyed += 1;
-		hearts [destroyed-1].color = Color.black;
+		hearts [10-destroyed].color = Color.black;
 		if (destroyed >= 10) {
 			SceneManager.LoadScene(mainMenuScene);
 		}
